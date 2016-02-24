@@ -1,0 +1,466 @@
+execve("./server", ["./server"], [/* 77 vars */]) = 0
+brk(0)                                  = 0x1598000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fc5ffbe4000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=133010, ...}) = 0
+mmap(NULL, 133010, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fc5ffbc3000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/usr/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200@\6\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=1090072, ...}) = 0
+mmap(NULL, 3198144, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fc5ff6b7000
+mprotect(0x7fc5ff7b8000, 2097152, PROT_NONE) = 0
+mmap(0x7fc5ff9b8000, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x101000) = 0x7fc5ff9b8000
+mmap(0x7fc5ff9c1000, 11456, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fc5ff9c1000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360*\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=92504, ...}) = 0
+mmap(NULL, 2188352, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fc5ff4a0000
+mprotect(0x7fc5ff4b6000, 2093056, PROT_NONE) = 0
+mmap(0x7fc5ff6b5000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7fc5ff6b5000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\37\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1840928, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fc5ffbc2000
+mmap(NULL, 3949248, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fc5ff0db000
+mprotect(0x7fc5ff296000, 2093056, PROT_NONE) = 0
+mmap(0x7fc5ff495000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ba000) = 0x7fc5ff495000
+mmap(0x7fc5ff49b000, 17088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fc5ff49b000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20V\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=1071552, ...}) = 0
+mmap(NULL, 3166568, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fc5fedd5000
+mprotect(0x7fc5feeda000, 2093056, PROT_NONE) = 0
+mmap(0x7fc5ff0d9000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x104000) = 0x7fc5ff0d9000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fc5ffbc1000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fc5ffbbf000
+arch_prctl(ARCH_SET_FS, 0x7fc5ffbbf780) = 0
+mprotect(0x7fc5ff495000, 16384, PROT_READ) = 0
+mprotect(0x7fc5ff0d9000, 4096, PROT_READ) = 0
+mprotect(0x7fc5ff6b5000, 4096, PROT_READ) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fc5ffbbe000
+mprotect(0x7fc5ff9b8000, 28672, PROT_READ) = 0
+mprotect(0x605000, 4096, PROT_READ)     = 0
+mprotect(0x7fc5ffbe6000, 4096, PROT_READ) = 0
+munmap(0x7fc5ffbc3000, 133010)          = 0
+brk(0)                                  = 0x1598000
+brk(0x15ca000)                          = 0x15ca000
+open("/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 3
+read(3, "0-3\n", 8192)                  = 4
+close(3)                                = 0
+getpid()                                = 6551
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 12), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fc5ffbe3000
+write(1, "pid my is = 6551\n", 17)      = 17
+socketpair(PF_LOCAL, SOCK_STREAM, 0, [3, 4]) = 0
+clone(Process 6552 attached
+child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fc5ffbbfa50) = 6552
+[pid  6551] close(4)                    = 0
+[pid  6552] close(3 <unfinished ...>
+[pid  6551] write(1, "pid my is = 6551\n", 17 <unfinished ...>
+[pid  6552] <... close resumed> )       = 0
+[pid  6551] <... write resumed> )       = 17
+[pid  6552] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid  6551] socketpair(PF_LOCAL, SOCK_STREAM, 0 <unfinished ...>
+[pid  6552] <... rt_sigprocmask resumed> [], 8) = 0
+[pid  6551] <... socketpair resumed> , [4, 5]) = 0
+[pid  6552] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid  6551] clone( <unfinished ...>
+[pid  6552] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid  6552] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid  6551] <... clone resumed> child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fc5ffbbfa50) = 6553
+Process 6553 attached
+[pid  6551] close(5)                    = 0
+[pid  6553] close(4 <unfinished ...>
+[pid  6551] write(1, "pid my is = 6551\n", 17 <unfinished ...>
+[pid  6553] <... close resumed> )       = 0
+[pid  6551] <... write resumed> )       = 17
+[pid  6551] socketpair(PF_LOCAL, SOCK_STREAM, 0, [5, 6]) = 0
+[pid  6553] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid  6551] clone( <unfinished ...>
+[pid  6553] <... rt_sigprocmask resumed> [], 8) = 0
+[pid  6553] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid  6552] nanosleep({1, 0},  <unfinished ...>
+[pid  6553] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid  6553] rt_sigprocmask(SIG_SETMASK, [], Process 6554 attached
+ <unfinished ...>
+[pid  6551] <... clone resumed> child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fc5ffbbfa50) = 6554
+[pid  6553] <... rt_sigprocmask resumed> NULL, 8) = 0
+[pid  6551] close(6 <unfinished ...>
+[pid  6554] close(5 <unfinished ...>
+[pid  6551] <... close resumed> )       = 0
+[pid  6554] <... close resumed> )       = 0
+[pid  6553] nanosleep({1, 0},  <unfinished ...>
+[pid  6551] write(1, "pid my is = 6551\n", 17 <unfinished ...>
+[pid  6554] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid  6551] <... write resumed> )       = 17
+[pid  6554] <... rt_sigprocmask resumed> [], 8) = 0
+[pid  6551] socketpair(PF_LOCAL, SOCK_STREAM, 0 <unfinished ...>
+[pid  6554] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid  6551] <... socketpair resumed> , [6, 7]) = 0
+[pid  6554] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid  6551] clone( <unfinished ...>
+[pid  6554] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid  6554] nanosleep({1, 0},  <unfinished ...>
+[pid  6551] <... clone resumed> child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fc5ffbbfa50) = 6555
+Process 6555 attached
+[pid  6551] close(7)                    = 0
+[pid  6555] close(6 <unfinished ...>
+[pid  6551] socket(PF_INET, SOCK_STREAM, IPPROTO_TCP <unfinished ...>
+[pid  6555] <... close resumed> )       = 0
+[pid  6551] <... socket resumed> )      = 7
+[pid  6551] bind(7, {sa_family=AF_INET, sin_port=htons(11141), sin_addr=inet_addr("0.0.0.0")}, 16 <unfinished ...>
+[pid  6555] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid  6551] <... bind resumed> )        = 0
+[pid  6555] <... rt_sigprocmask resumed> [], 8) = 0
+[pid  6551] fcntl(7, F_GETFL <unfinished ...>
+[pid  6555] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid  6551] <... fcntl resumed> )       = 0x2 (flags O_RDWR)
+[pid  6555] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid  6551] fcntl(7, F_SETFL, O_RDWR|O_NONBLOCK <unfinished ...>
+[pid  6555] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid  6551] <... fcntl resumed> )       = 0
+[pid  6555] <... rt_sigprocmask resumed> NULL, 8) = 0
+[pid  6551] listen(7, 128 <unfinished ...>
+[pid  6555] nanosleep({1, 0},  <unfinished ...>
+[pid  6551] <... listen resumed> )      = 0
+[pid  6551] epoll_create1(0)            = 8
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 7, {EPOLLIN|EPOLLRDHUP, {u32=7, u64=18078397817159687}}) = 0
+[pid  6551] epoll_wait(8,  <unfinished ...>
+[pid  6552] <... nanosleep resumed> 0x7ffdbff31320) = 0
+[pid  6553] <... nanosleep resumed> 0x7ffdbff31320) = 0
+[pid  6554] <... nanosleep resumed> 0x7ffdbff31320) = 0
+[pid  6553] recvmsg(5,  <unfinished ...>
+[pid  6554] recvmsg(6,  <unfinished ...>
+[pid  6555] <... nanosleep resumed> 0x7ffdbff31320) = 0
+[pid  6552] recvmsg(4,  <unfinished ...>
+[pid  6555] recvmsg(7,  <unfinished ...>
+[pid  6551] <... epoll_wait resumed> {{EPOLLIN, {u32=7, u64=18078397817159687}}}, 32, -1) = 1
+[pid  6551] accept(7, 0, NULL)          = 9
+[pid  6551] fcntl(9, F_GETFL)           = 0x2 (flags O_RDWR)
+[pid  6551] fcntl(9, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 9, {EPOLLIN|EPOLLRDHUP, {u32=9, u64=18428309421240090633}}) = 0
+[pid  6551] epoll_wait(8, {{EPOLLIN, {u32=7, u64=18078397817159687}}}, 32, -1) = 1
+[pid  6551] accept(7, 0, NULL)          = 10
+[pid  6551] fcntl(10, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid  6551] fcntl(10, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 10, {EPOLLIN|EPOLLRDHUP, {u32=10, u64=18428309421240090634}}) = 0
+[pid  6551] epoll_wait(8, {{EPOLLIN, {u32=7, u64=18078397817159687}}, {EPOLLIN, {u32=9, u64=18428309421240090633}}, {EPOLLIN, {u32=10, u64=18428309421240090634}}}, 32, -1) = 3
+[pid  6551] accept(7, 0, NULL)          = 11
+[pid  6551] fcntl(11, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid  6551] fcntl(11, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 11, {EPOLLIN|EPOLLRDHUP, {u32=11, u64=18428309421240090635}}) = 0
+[pid  6551] write(1, "passing fd 9\n", 13) = 13
+[pid  6551] sendmsg(3, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {9}}, msg_flags=MSG_TRUNC}, 0) = 1
+[pid  6552] <... recvmsg resumed> {msg_name(0)=NULL, msg_iov(1)=[{"1", 16}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {3}}, msg_flags=0}, 0) = 1
+[pid  6551] write(1, "passing fd 10\n", 14 <unfinished ...>
+[pid  6552] write(1, "received fd 3\n", 14 <unfinished ...>
+[pid  6551] <... write resumed> )       = 14
+[pid  6551] sendmsg(4, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {10}}, msg_flags=MSG_TRUNC}, 0 <unfinished ...>
+[pid  6552] <... write resumed> )       = 14
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6553] <... recvmsg resumed> {msg_name(0)=NULL, msg_iov(1)=[{"1", 16}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {4}}, msg_flags=0}, 0) = 1
+[pid  6551] epoll_wait(8,  <unfinished ...>
+[pid  6552] recvfrom(3,  <unfinished ...>
+[pid  6551] <... epoll_wait resumed> {{EPOLLIN, {u32=7, u64=18078397817159687}}, {EPOLLIN, {u32=10, u64=18428309421240090634}}, {EPOLLIN, {u32=11, u64=18428309421240090635}}}, 32, -1) = 3
+[pid  6553] write(1, "received fd 4\n", 14 <unfinished ...>
+[pid  6551] accept(7,  <unfinished ...>
+[pid  6553] <... write resumed> )       = 14
+[pid  6551] <... accept resumed> 0, NULL) = 12
+[pid  6552] <... recvfrom resumed> "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 99999, MSG_NOSIGNAL, NULL, NULL) = 83
+[pid  6552] write(1, "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 83 <unfinished ...>
+[pid  6553] recvfrom(4,  <unfinished ...>
+[pid  6551] fcntl(12, F_GETFL <unfinished ...>
+[pid  6553] <... recvfrom resumed> "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 99999, MSG_NOSIGNAL, NULL, NULL) = 83
+[pid  6551] <... fcntl resumed> )       = 0x2 (flags O_RDWR)
+[pid  6553] write(1, "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 83 <unfinished ...>
+[pid  6551] fcntl(12, F_SETFL, O_RDWR|O_NONBLOCK <unfinished ...>
+[pid  6553] <... write resumed> )       = 83
+[pid  6551] <... fcntl resumed> )       = 0
+[pid  6552] <... write resumed> )       = 83
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 12, {EPOLLIN|EPOLLRDHUP, {u32=12, u64=27130793012756492}} <unfinished ...>
+[pid  6553] write(1, "reqline 1 /\n", 12 <unfinished ...>
+[pid  6552] write(1, "reqline 1 /\n", 12 <unfinished ...>
+[pid  6551] <... epoll_ctl resumed> )   = 0
+[pid  6553] <... write resumed> )       = 12
+[pid  6551] write(1, "passing fd 10\n", 14 <unfinished ...>
+[pid  6553] write(1, "reqline 2 HTTP/1.0\r\n", 20 <unfinished ...>
+[pid  6551] <... write resumed> )       = 14
+[pid  6553] <... write resumed> )       = 20
+[pid  6551] sendmsg(5, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {10}}, msg_flags=MSG_TRUNC}, 0 <unfinished ...>
+[pid  6553] write(1, "file: /home/misha/web_server//in"..., 41 <unfinished ...>
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6554] <... recvmsg resumed> {msg_name(0)=NULL, msg_iov(1)=[{"1", 16}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {5}}, msg_flags=0}, 0) = 1
+[pid  6551] write(1, "passing fd 11\n", 14 <unfinished ...>
+[pid  6553] <... write resumed> )       = 41
+[pid  6552] <... write resumed> )       = 12
+[pid  6554] write(1, "received fd 5\n", 14 <unfinished ...>
+[pid  6551] <... write resumed> )       = 14
+[pid  6554] <... write resumed> )       = 14
+[pid  6551] sendmsg(6, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {11}}, msg_flags=MSG_TRUNC}, 0 <unfinished ...>
+[pid  6553] open("/home/misha/web_server//index.html", O_RDONLY <unfinished ...>
+[pid  6552] write(1, "reqline 2 HTTP/1.0\r\n", 20 <unfinished ...>
+[pid  6553] <... open resumed> )        = 6
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6555] <... recvmsg resumed> {msg_name(0)=NULL, msg_iov(1)=[{"1", 16}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {6}}, msg_flags=0}, 0) = 1
+[pid  6554] recvfrom(5,  <unfinished ...>
+[pid  6553] sendto(4, "HTTP/1.0 200 OK\n\n", 17, 0, NULL, 0 <unfinished ...>
+[pid  6551] epoll_wait(8,  <unfinished ...>
+[pid  6555] write(1, "received fd 6\n", 14 <unfinished ...>
+[pid  6551] <... epoll_wait resumed> {{EPOLLIN, {u32=7, u64=18078397817159687}}, {EPOLLIN, {u32=11, u64=18428309421240090635}}, {EPOLLIN, {u32=12, u64=27130793012756492}}}, 32, -1) = 3
+[pid  6555] <... write resumed> )       = 14
+[pid  6554] <... recvfrom resumed> 0x7ffdbff00790, 99999, 16384, 0, 0) = -1 EAGAIN (Resource temporarily unavailable)
+[pid  6553] <... sendto resumed> )      = 17
+[pid  6554] shutdown(5, SHUT_RDWR <unfinished ...>
+[pid  6553] read(6,  <unfinished ...>
+[pid  6551] accept(7,  <unfinished ...>
+[pid  6555] recvfrom(6,  <unfinished ...>
+[pid  6554] <... shutdown resumed> )    = 0
+[pid  6555] <... recvfrom resumed> "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 99999, MSG_NOSIGNAL, NULL, NULL) = 83
+[pid  6551] <... accept resumed> 0, NULL) = 13
+[pid  6555] write(1, "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 83 <unfinished ...>
+[pid  6551] fcntl(13, F_GETFL <unfinished ...>
+[pid  6555] <... write resumed> )       = 83
+[pid  6552] <... write resumed> )       = 20
+[pid  6554] recvmsg(6,  <unfinished ...>
+[pid  6552] write(1, "file: /home/misha/web_server//in"..., 41 <unfinished ...>
+[pid  6551] <... fcntl resumed> )       = 0x2 (flags O_RDWR)
+[pid  6555] write(1, "reqline 1 /\n", 12 <unfinished ...>
+[pid  6551] fcntl(13, F_SETFL, O_RDWR|O_NONBLOCK <unfinished ...>
+[pid  6555] <... write resumed> )       = 12
+[pid  6551] <... fcntl resumed> )       = 0
+[pid  6555] write(1, "reqline 2 HTTP/1.0\r\n", 20 <unfinished ...>
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 13, {EPOLLIN|EPOLLRDHUP, {u32=13, u64=27130793012756493}} <unfinished ...>
+[pid  6555] <... write resumed> )       = 20
+[pid  6551] <... epoll_ctl resumed> )   = 0
+[pid  6552] <... write resumed> )       = 41
+[pid  6551] write(1, "passing fd 11\n", 14 <unfinished ...>
+[pid  6555] write(1, "file: /home/misha/web_server//in"..., 41 <unfinished ...>
+[pid  6551] <... write resumed> )       = 14
+[pid  6555] <... write resumed> )       = 41
+[pid  6551] sendmsg(3, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {11}}, msg_flags=MSG_TRUNC}, 0 <unfinished ...>
+[pid  6555] open("/home/misha/web_server//index.html", O_RDONLY <unfinished ...>
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6555] <... open resumed> )        = 8
+[pid  6551] write(1, "passing fd 12\n", 14 <unfinished ...>
+[pid  6555] sendto(6, "HTTP/1.0 200 OK\n\n", 17, 0, NULL, 0 <unfinished ...>
+[pid  6551] <... write resumed> )       = 14
+[pid  6552] open("/home/misha/web_server//index.html", O_RDONLY <unfinished ...>
+[pid  6551] sendmsg(4, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {12}}, msg_flags=MSG_TRUNC}, 0 <unfinished ...>
+[pid  6555] <... sendto resumed> )      = 17
+[pid  6552] <... open resumed> )        = 5
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6555] read(8,  <unfinished ...>
+[pid  6551] epoll_wait(8,  <unfinished ...>
+[pid  6552] sendto(3, "HTTP/1.0 200 OK\n\n", 17, 0, NULL, 0 <unfinished ...>
+[pid  6551] <... epoll_wait resumed> {{EPOLLIN, {u32=7, u64=18078397817159687}}, {EPOLLIN, {u32=12, u64=27130793012756492}}, {EPOLLIN|EPOLLHUP|EPOLLRDHUP, {u32=10, u64=18428309421240090634}}, {EPOLLIN, {u32=13, u64=27130793012756493}}}, 32, -1) = 4
+[pid  6552] <... sendto resumed> )      = 17
+[pid  6551] accept(7,  <unfinished ...>
+[pid  6552] read(5,  <unfinished ...>
+[pid  6551] <... accept resumed> 0, NULL) = 14
+[pid  6551] fcntl(14, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid  6551] fcntl(14, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 14, {EPOLLIN|EPOLLRDHUP, {u32=14, u64=27130793012756494}}) = 0
+[pid  6551] write(1, "passing fd 12\n", 14) = 14
+[pid  6551] sendmsg(5, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {12}}, msg_flags=MSG_TRUNC}, 0) = 1
+[pid  6554] <... recvmsg resumed> {msg_name(0)=NULL, msg_iov(1)=[{"1", 16}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {7}}, msg_flags=0}, 0) = 1
+[pid  6551] epoll_ctl(8, EPOLL_CTL_DEL, 10, {EPOLLIN|EPOLLHUP|EPOLLRDHUP, {u32=10, u64=18428309421240090634}} <unfinished ...>
+[pid  6554] write(1, "received fd 7\n", 14 <unfinished ...>
+[pid  6551] <... epoll_ctl resumed> )   = 0
+[pid  6551] shutdown(10, SHUT_RDWR <unfinished ...>
+[pid  6554] <... write resumed> )       = 14
+[pid  6551] <... shutdown resumed> )    = -1 ENOTCONN (Transport endpoint is not connected)
+[pid  6554] recvfrom(7,  <unfinished ...>
+[pid  6551] close(10 <unfinished ...>
+[pid  6554] <... recvfrom resumed> "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 99999, MSG_NOSIGNAL, NULL, NULL) = 83
+[pid  6551] <... close resumed> )       = 0
+[pid  6554] write(1, "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 83 <unfinished ...>
+[pid  6551] write(1, "passing fd 13\n", 14 <unfinished ...>
+[pid  6554] <... write resumed> )       = 83
+[pid  6554] write(1, "reqline 1 /\n", 12 <unfinished ...>
+[pid  6551] <... write resumed> )       = 14
+[pid  6554] <... write resumed> )       = 12
+[pid  6551] sendmsg(6, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {13}}, msg_flags=MSG_PEEK}, 0 <unfinished ...>
+[pid  6554] write(1, "reqline 2 HTTP/1.0\r\n", 20 <unfinished ...>
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6554] <... write resumed> )       = 20
+[pid  6551] epoll_wait(8,  <unfinished ...>
+[pid  6554] write(1, "file: /home/misha/web_server//in"..., 41 <unfinished ...>
+[pid  6551] <... epoll_wait resumed> {{EPOLLIN, {u32=7, u64=18078397817159687}}, {EPOLLIN, {u32=13, u64=27130793012756493}}, {EPOLLIN, {u32=14, u64=27130793012756494}}}, 32, -1) = 3
+[pid  6554] <... write resumed> )       = 41
+[pid  6551] accept(7,  <unfinished ...>
+[pid  6554] open("/home/misha/web_server//index.html", O_RDONLY <unfinished ...>
+[pid  6551] <... accept resumed> 0, NULL) = 10
+[pid  6554] <... open resumed> )        = 8
+[pid  6551] fcntl(10, F_GETFL <unfinished ...>
+[pid  6554] sendto(7, "HTTP/1.0 200 OK\n\n", 17, 0, NULL, 0 <unfinished ...>
+[pid  6551] <... fcntl resumed> )       = 0x2 (flags O_RDWR)
+[pid  6551] fcntl(10, F_SETFL, O_RDWR|O_NONBLOCK <unfinished ...>
+[pid  6554] <... sendto resumed> )      = 17
+[pid  6551] <... fcntl resumed> )       = 0
+[pid  6554] read(8,  <unfinished ...>
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 10, {EPOLLIN|EPOLLRDHUP, {u32=10, u64=27130793012756490}}) = 0
+[pid  6551] write(1, "passing fd 13\n", 14) = 14
+[pid  6551] sendmsg(3, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {13}}, msg_flags=MSG_PEEK}, 0) = 1
+[pid  6551] write(1, "passing fd 14\n", 14) = 14
+[pid  6551] sendmsg(4, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {14}}, msg_flags=MSG_PEEK}, 0) = 1
+[pid  6551] epoll_wait(8, {{EPOLLIN, {u32=7, u64=18078397817159687}}, {EPOLLIN, {u32=13, u64=27130793012756493}}, {EPOLLIN, {u32=14, u64=27130793012756494}}, {EPOLLIN, {u32=10, u64=27130793012756490}}}, 32, -1) = 4
+[pid  6551] accept(7, 0, NULL)          = 15
+[pid  6551] fcntl(15, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid  6551] fcntl(15, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 15, {EPOLLIN|EPOLLRDHUP, {u32=15, u64=27130793012756495}}) = 0
+[pid  6551] write(1, "passing fd 13\n", 14) = 14
+[pid  6551] sendmsg(5, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {13}}, msg_flags=MSG_PEEK}, 0) = 1
+[pid  6551] write(1, "passing fd 14\n", 14) = 14
+[pid  6551] sendmsg(6, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {14}}, msg_flags=MSG_PEEK}, 0) = 1
+[pid  6551] write(1, "passing fd 10\n", 14) = 14
+[pid  6551] sendmsg(3, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {10}}, msg_flags=MSG_PEEK}, 0) = 1
+[pid  6551] epoll_wait(8, {{EPOLLIN, {u32=7, u64=18078397817159687}}, {EPOLLIN, {u32=13, u64=27130793012756493}}, {EPOLLIN, {u32=14, u64=27130793012756494}}, {EPOLLIN, {u32=10, u64=27130793012756490}}, {EPOLLIN, {u32=15, u64=27130793012756495}}}, 32, -1) = 5
+[pid  6551] accept(7, 0, NULL)          = 16
+[pid  6551] fcntl(16, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid  6551] fcntl(16, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 16, {EPOLLIN|EPOLLRDHUP, {u32=16, u64=27130793012756496}}) = 0
+[pid  6551] write(1, "passing fd 13\n", 14) = 14
+[pid  6551] sendmsg(4, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {13}}, msg_flags=MSG_PEEK}, 0) = 1
+[pid  6551] write(1, "passing fd 14\n", 14) = 14
+[pid  6551] sendmsg(5, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {14}}, msg_flags=MSG_PEEK}, 0) = 1
+[pid  6551] write(1, "passing fd 10\n", 14) = 14
+[pid  6551] sendmsg(6, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {10}}, msg_flags=MSG_PEEK}, 0) = 1
+[pid  6551] write(1, "passing fd 15\n", 14) = 14
+[pid  6551] sendmsg(3, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {15}}, msg_flags=MSG_PEEK}, 0) = 1
+[pid  6551] epoll_wait(8, {{EPOLLIN, {u32=7, u64=18078397817159687}}, {EPOLLIN, {u32=13, u64=27130793012756493}}, {EPOLLIN, {u32=14, u64=27130793012756494}}, {EPOLLIN, {u32=10, u64=27130793012756490}}, {EPOLLIN, {u32=15, u64=27130793012756495}}, {EPOLLIN, {u32=16, u64=27130793012756496}}}, 32, -1) = 6
+[pid  6551] accept(7, 0, NULL)          = 17
+[pid  6551] fcntl(17, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid  6551] fcntl(17, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid  6551] epoll_ctl(8, EPOLL_CTL_ADD, 17, {EPOLLIN|EPOLLRDHUP, {u32=17, u64=27130793012756497}}) = 0
+[pid  6551] write(1, "passing fd 13\n", 14) = 14
+[pid  6555] <... read resumed> "<html> \n     <head> \n          <"..., 1024) = 757
+[pid  6551] sendmsg(4, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {13}}, msg_flags=MSG_PEEK}, 0 <unfinished ...>
+[pid  6555] write(6, "<html> \n     <head> \n          <"..., 757 <unfinished ...>
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6554] <... read resumed> "<html> \n     <head> \n          <"..., 1024) = 757
+[pid  6553] <... read resumed> "<html> \n     <head> \n          <"..., 1024) = 757
+[pid  6552] <... read resumed> "<html> \n     <head> \n          <"..., 1024) = 757
+[pid  6553] write(4, "<html> \n     <head> \n          <"..., 757 <unfinished ...>
+[pid  6551] write(1, "passing fd 14\n", 14 <unfinished ...>
+[pid  6555] <... write resumed> )       = 757
+[pid  6551] <... write resumed> )       = 14
+[pid  6555] read(8,  <unfinished ...>
+[pid  6551] sendmsg(5, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {14}}, msg_flags=MSG_PEEK}, 0 <unfinished ...>
+[pid  6555] <... read resumed> "", 1024) = 0
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6555] shutdown(6, SHUT_RDWR <unfinished ...>
+[pid  6551] write(1, "passing fd 10\n", 14 <unfinished ...>
+[pid  6554] write(7, "<html> \n     <head> \n          <"..., 757 <unfinished ...>
+[pid  6553] <... write resumed> )       = -1 EPIPE (Broken pipe)
+[pid  6552] write(3, "<html> \n     <head> \n          <"..., 757 <unfinished ...>
+[pid  6553] --- SIGPIPE {si_signo=SIGPIPE, si_code=SI_USER, si_pid=6553, si_uid=1000} ---
+[pid  6553] +++ killed by SIGPIPE +++
+[pid  6554] <... write resumed> )       = 757
+[pid  6554] read(8,  <unfinished ...>
+[pid  6551] <... write resumed> )       = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  6555] <... shutdown resumed> )    = 0
+[pid  6551] --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_KILLED, si_pid=6553, si_status=SIGPIPE, si_utime=0, si_stime=0} ---
+[pid  6555] recvmsg(7,  <unfinished ...>
+[pid  6551] write(1, "passing fd 10\n", 14 <unfinished ...>
+[pid  6555] <... recvmsg resumed> {msg_name(0)=NULL, msg_iov(1)=[{"1", 16}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {9}}, msg_flags=0}, 0) = 1
+[pid  6551] <... write resumed> )       = 14
+[pid  6555] write(1, "received fd 9\n", 14 <unfinished ...>
+[pid  6551] sendmsg(6, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {10}}, msg_flags=MSG_PEEK}, 0 <unfinished ...>
+[pid  6555] <... write resumed> )       = 14
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6554] <... read resumed> "", 1024) = 0
+[pid  6551] write(1, "passing fd 15\n", 14 <unfinished ...>
+[pid  6555] recvfrom(9,  <unfinished ...>
+[pid  6551] <... write resumed> )       = 14
+[pid  6555] <... recvfrom resumed> "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 99999, MSG_NOSIGNAL, NULL, NULL) = 83
+[pid  6551] sendmsg(3, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {15}}, msg_flags=MSG_PEEK}, 0 <unfinished ...>
+[pid  6555] write(1, "GET / HTTP/1.0\r\nHost: 127.0.0.1:"..., 83 <unfinished ...>
+[pid  6551] <... sendmsg resumed> )     = 1
+[pid  6555] <... write resumed> )       = 83
+[pid  6554] shutdown(7, SHUT_RDWR <unfinished ...>
+[pid  6552] <... write resumed> )       = 757
+[pid  6551] write(1, "passing fd 16\n", 14 <unfinished ...>
+[pid  6555] write(1, "reqline 1 /\n", 12 <unfinished ...>
+[pid  6554] <... shutdown resumed> )    = 0
+[pid  6551] <... write resumed> )       = 14
+[pid  6555] <... write resumed> )       = 12
+[pid  6554] recvmsg(6,  <unfinished ...>
+[pid  6551] sendmsg(4, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {16}}, msg_flags=MSG_PEEK}, 0 <unfinished ...>
+[pid  6555] write(1, "reqline 2 HTTP/1.0\r\n", 20 <unfinished ...>
+[pid  6554] <... recvmsg resumed> {msg_name(0)=NULL, msg_iov(1)=[{"1", 16}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {9}}, msg_flags=0}, 0) = 1
+[pid  6551] <... sendmsg resumed> )     = -1 EPIPE (Broken pipe)
+[pid  6555] <... write resumed> )       = 20
+[pid  6554] write(1, "received fd 9\n", 14 <unfinished ...>
+[pid  6551] --- SIGPIPE {si_signo=SIGPIPE, si_code=SI_USER, si_pid=6551, si_uid=1000} ---
+[pid  6555] write(1, "file: /home/misha/web_server//in"..., 41 <unfinished ...>
+[pid  6554] <... write resumed> )       = 14
+[pid  6551] +++ killed by SIGPIPE +++
+[pid  6555] <... write resumed> )       = 41
+[pid  6554] recvfrom(9,  <unfinished ...>
+[pid  6552] read(5, "", 1024)           = 0
+[pid  6552] shutdown(3, SHUT_RDWR)      = 0
+[pid  6552] recvmsg(4,  <unfinished ...>
+[pid  6555] open(0x7ffdbff18e30, O_RDONLY <unfinished ...>
+[pid  6554] <... recvfrom resumed> "", 99999, MSG_NOSIGNAL, NULL, NULL) = 0
+[pid  6555] <... open resumed> )        = 10
+[pid  6554] shutdown(9, SHUT_RDWR <unfinished ...>
+[pid  6555] sendto(9, 0x403df9, 17, 0, NULL, 0 <unfinished ...>
+[pid  6552] <... recvmsg resumed> 0x7ffdbff31490, 0) = 1
+[pid  6555] <... sendto resumed> )      = -1 EPIPE (Broken pipe)
+[pid  6554] <... shutdown resumed> )    = 0
+[pid  6555] --- SIGPIPE {si_signo=SIGPIPE, si_code=SI_USER, si_pid=6555, si_uid=1000} ---
+[pid  6554] recvmsg(6,  <unfinished ...>
+[pid  6552] write(1, 0x7fc5ffbe3000, 14) = 14
+[pid  6552] recvfrom(6, "", 99999, MSG_NOSIGNAL, NULL, NULL) = 0
+[pid  6552] shutdown(6, SHUT_RDWR)      = -1 ENOTCONN (Transport endpoint is not connected)
+[pid  6555] +++ killed by SIGPIPE +++
+[pid  6554] <... recvmsg resumed> 0x7ffdbff31490, 0) = 1
+[pid  6552] close(6 <unfinished ...>
+[pid  6554] write(1, 0x7fc5ffbe3000, 15 <unfinished ...>
+[pid  6552] <... close resumed> )       = 0
+[pid  6552] shutdown(6, SHUT_RDWR)      = -1 EBADF (Bad file descriptor)
+[pid  6552] recvmsg(4, 0x7ffdbff31490, 0) = 1
+[pid  6552] write(1, 0x7fc5ffbe3000, 14 <unfinished ...>
+[pid  6554] <... write resumed> )       = 15
+[pid  6552] <... write resumed> )       = 14
+[pid  6554] recvfrom(10,  <unfinished ...>
+[pid  6552] recvfrom(6,  <unfinished ...>
+[pid  6554] <... recvfrom resumed> 0x7ffdbff00790, 99999, MSG_NOSIGNAL, NULL, NULL) = 83
+[pid  6552] <... recvfrom resumed> "", 99999, MSG_NOSIGNAL, NULL, NULL) = 0
+[pid  6552] shutdown(6, SHUT_RDWR)      = -1 ENOTCONN (Transport endpoint is not connected)
+[pid  6552] close(6)                    = 0
+[pid  6552] shutdown(6, SHUT_RDWR)      = -1 EBADF (Bad file descriptor)
+[pid  6552] recvmsg(4, 0x7ffdbff31490, 0) = 1
+[pid  6552] write(1, 0x7fc5ffbe3000, 14) = 14
+[pid  6552] recvfrom(6, 0x7ffdbff00790, 99999, MSG_NOSIGNAL, NULL, NULL) = 83
+[pid  6552] write(1, 0x7fc5ffbe3000, 83) = 83
+[pid  6552] write(1, 0x7fc5ffbe3000, 12) = 12
+[pid  6552] write(1, 0x7fc5ffbe3000, 20) = 20
+[pid  6552] write(1, 0x7fc5ffbe3000, 41) = 41
+[pid  6552] open(0x7ffdbff18e30, O_RDONLY) = 7
+[pid  6552] sendto(6, 0x403df9, 17, 0, NULL, 0) = 17
+[pid  6552] read(7, 0x7ffdbff00390, 1024) = 757
+[pid  6552] write(6, 0x7ffdbff00390, 757) = -1 EPIPE (Broken pipe)
+[pid  6552] --- SIGPIPE {si_signo=SIGPIPE, si_code=SI_USER, si_pid=6552, si_uid=1000} ---
+[pid  6552] +++ killed by SIGPIPE +++
+write(1, 0x7fc5ffbe3000, 83)            = 83
+write(1, 0x7fc5ffbe3000, 12)            = 12
+write(1, 0x7fc5ffbe3000, 20)            = 20
+write(1, 0x7fc5ffbe3000, 41)            = 41
+open(0x7ffdbff18e30, O_RDONLY)          = 11
+sendto(10, 0x403df9, 17, 0, NULL, 0)    = 17
+read(11, 0x7ffdbff00390, 1024)          = 757
+write(10, 0x7ffdbff00390, 757)          = -1 EPIPE (Broken pipe)
+--- SIGPIPE {si_signo=SIGPIPE, si_code=SI_USER, si_pid=6554, si_uid=1000} ---
++++ killed by SIGPIPE +++

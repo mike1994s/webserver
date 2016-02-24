@@ -1,0 +1,184 @@
+execve("./server", ["./server"], [/* 79 vars */]) = 0
+brk(0)                                  = 0x1ae0000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1c1b2e8000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=133010, ...}) = 0
+mmap(NULL, 133010, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1c1b2c7000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/usr/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200@\6\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=1090072, ...}) = 0
+mmap(NULL, 3198144, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1c1adbb000
+mprotect(0x7f1c1aebc000, 2097152, PROT_NONE) = 0
+mmap(0x7f1c1b0bc000, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x101000) = 0x7f1c1b0bc000
+mmap(0x7f1c1b0c5000, 11456, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1c1b0c5000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360*\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=92504, ...}) = 0
+mmap(NULL, 2188352, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1c1aba4000
+mprotect(0x7f1c1abba000, 2093056, PROT_NONE) = 0
+mmap(0x7f1c1adb9000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7f1c1adb9000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\37\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1840928, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1c1b2c6000
+mmap(NULL, 3949248, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1c1a7df000
+mprotect(0x7f1c1a99a000, 2093056, PROT_NONE) = 0
+mmap(0x7f1c1ab99000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ba000) = 0x7f1c1ab99000
+mmap(0x7f1c1ab9f000, 17088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1c1ab9f000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20V\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=1071552, ...}) = 0
+mmap(NULL, 3166568, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1c1a4d9000
+mprotect(0x7f1c1a5de000, 2093056, PROT_NONE) = 0
+mmap(0x7f1c1a7dd000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x104000) = 0x7f1c1a7dd000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1c1b2c5000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1c1b2c3000
+arch_prctl(ARCH_SET_FS, 0x7f1c1b2c3780) = 0
+mprotect(0x7f1c1ab99000, 16384, PROT_READ) = 0
+mprotect(0x7f1c1a7dd000, 4096, PROT_READ) = 0
+mprotect(0x7f1c1adb9000, 4096, PROT_READ) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1c1b2c2000
+mprotect(0x7f1c1b0bc000, 28672, PROT_READ) = 0
+mprotect(0x605000, 4096, PROT_READ)     = 0
+mprotect(0x7f1c1b2ea000, 4096, PROT_READ) = 0
+munmap(0x7f1c1b2c7000, 133010)          = 0
+brk(0)                                  = 0x1ae0000
+brk(0x1b12000)                          = 0x1b12000
+open("/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 3
+read(3, "0-3\n", 8192)                  = 4
+close(3)                                = 0
+getpid()                                = 32392
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 25), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1c1b2e7000
+write(1, "pid my is = 32392\n", 18)     = 18
+socketpair(PF_LOCAL, SOCK_STREAM, 0, [3, 4]) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f1c1b2c3a50) = 32393
+Process 32393 attached
+[pid 32392] close(4)                    = 0
+[pid 32393] close(3 <unfinished ...>
+[pid 32392] write(1, "pid my is = 32392\n", 18 <unfinished ...>
+[pid 32393] <... close resumed> )       = 0
+[pid 32392] <... write resumed> )       = 18
+[pid 32393] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid 32392] socketpair(PF_LOCAL, SOCK_STREAM, 0 <unfinished ...>
+[pid 32393] <... rt_sigprocmask resumed> [], 8) = 0
+[pid 32392] <... socketpair resumed> , [4, 5]) = 0
+[pid 32393] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid 32392] clone( <unfinished ...>
+[pid 32393] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid 32393] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid 32393] nanosleep({1, 0},  <unfinished ...>
+[pid 32392] <... clone resumed> child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f1c1b2c3a50) = 32394
+Process 32394 attached
+[pid 32392] close(5)                    = 0
+[pid 32394] close(4)                    = 0
+[pid 32392] write(1, "pid my is = 32392\n", 18) = 18
+[pid 32394] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid 32392] socketpair(PF_LOCAL, SOCK_STREAM, 0 <unfinished ...>
+[pid 32394] <... rt_sigprocmask resumed> [], 8) = 0
+[pid 32392] <... socketpair resumed> , [5, 6]) = 0
+[pid 32394] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid 32392] clone( <unfinished ...>
+[pid 32394] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid 32394] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid 32394] nanosleep({1, 0}, Process 32395 attached
+ <unfinished ...>
+[pid 32392] <... clone resumed> child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f1c1b2c3a50) = 32395
+[pid 32392] close(6 <unfinished ...>
+[pid 32395] close(5 <unfinished ...>
+[pid 32392] <... close resumed> )       = 0
+[pid 32395] <... close resumed> )       = 0
+[pid 32392] write(1, "pid my is = 32392\n", 18 <unfinished ...>
+[pid 32395] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid 32392] <... write resumed> )       = 18
+[pid 32395] <... rt_sigprocmask resumed> [], 8) = 0
+[pid 32392] socketpair(PF_LOCAL, SOCK_STREAM, 0 <unfinished ...>
+[pid 32395] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid 32392] <... socketpair resumed> , [6, 7]) = 0
+[pid 32395] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid 32392] clone( <unfinished ...>
+[pid 32395] rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+[pid 32395] nanosleep({1, 0}, Process 32396 attached
+ <unfinished ...>
+[pid 32392] <... clone resumed> child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f1c1b2c3a50) = 32396
+[pid 32392] close(7 <unfinished ...>
+[pid 32396] close(6 <unfinished ...>
+[pid 32392] <... close resumed> )       = 0
+[pid 32396] <... close resumed> )       = 0
+[pid 32392] socket(PF_INET, SOCK_STREAM, IPPROTO_TCP) = 7
+[pid 32396] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid 32392] bind(7, {sa_family=AF_INET, sin_port=htons(12345), sin_addr=inet_addr("0.0.0.0")}, 16 <unfinished ...>
+[pid 32396] <... rt_sigprocmask resumed> [], 8) = 0
+[pid 32392] <... bind resumed> )        = 0
+[pid 32396] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid 32392] fcntl(7, F_GETFL <unfinished ...>
+[pid 32396] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid 32392] <... fcntl resumed> )       = 0x2 (flags O_RDWR)
+[pid 32396] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 32392] fcntl(7, F_SETFL, O_RDWR|O_NONBLOCK <unfinished ...>
+[pid 32396] <... rt_sigprocmask resumed> NULL, 8) = 0
+[pid 32392] <... fcntl resumed> )       = 0
+[pid 32396] nanosleep({1, 0},  <unfinished ...>
+[pid 32392] listen(7, 128)              = 0
+[pid 32392] epoll_create1(0)            = 8
+[pid 32392] epoll_ctl(8, EPOLL_CTL_ADD, 7, {EPOLLIN|EPOLLRDHUP, {u32=7, u64=18077762161999879}}) = 0
+[pid 32392] epoll_wait(8,  <unfinished ...>
+[pid 32393] <... nanosleep resumed> 0x7fff36eed910) = 0
+[pid 32393] recvmsg(4,  <unfinished ...>
+[pid 32394] <... nanosleep resumed> 0x7fff36eed910) = 0
+[pid 32394] recvmsg(5,  <unfinished ...>
+[pid 32395] <... nanosleep resumed> 0x7fff36eed910) = 0
+[pid 32395] recvmsg(6,  <unfinished ...>
+[pid 32396] <... nanosleep resumed> 0x7fff36eed910) = 0
+[pid 32396] recvmsg(7,  <unfinished ...>
+[pid 32392] <... epoll_wait resumed> {{EPOLLIN, {u32=7, u64=18077762161999879}}}, 32, -1) = 1
+[pid 32392] accept(7, 0, NULL)          = 9
+[pid 32392] fcntl(9, F_GETFL)           = 0x2 (flags O_RDWR)
+[pid 32392] fcntl(9, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid 32392] epoll_ctl(8, EPOLL_CTL_ADD, 9, {EPOLLIN|EPOLLRDHUP, {u32=9, u64=1958715952690364425}}) = 0
+[pid 32392] epoll_wait(8, {{EPOLLIN, {u32=7, u64=18077762161999879}}}, 32, -1) = 1
+[pid 32392] accept(7, 0, NULL)          = 10
+[pid 32392] fcntl(10, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid 32392] fcntl(10, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid 32392] epoll_ctl(8, EPOLL_CTL_ADD, 10, {EPOLLIN|EPOLLRDHUP, {u32=10, u64=1958715952690364426}}) = 0
+[pid 32392] epoll_wait(8, {{EPOLLIN, {u32=9, u64=1958715952690364425}}}, 32, -1) = 1
+[pid 32392] write(1, "passing fd 9\n", 13) = 13
+[pid 32392] sendmsg(3, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {9}}, msg_flags=MSG_TRUNC}, 0) = 1
+[pid 32393] <... recvmsg resumed> {msg_name(0)=NULL, msg_iov(1)=[{"1", 16}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {3}}, msg_flags=0}, 0) = 1
+[pid 32392] epoll_wait(8,  <unfinished ...>
+[pid 32393] write(1, "received fd 3\n", 14 <unfinished ...>
+[pid 32392] <... epoll_wait resumed> {{EPOLLIN, {u32=9, u64=1958715952690364425}}}, 32, -1) = 1
+[pid 32393] <... write resumed> )       = 14
+[pid 32392] write(1, "passing fd 9\n", 13 <unfinished ...>
+[pid 32393] recvfrom(3,  <unfinished ...>
+[pid 32392] <... write resumed> )       = 13
+[pid 32393] <... recvfrom resumed> "GET / HTTP/1.1\r\nHost: 127.0.0.1:"..., 99999, MSG_NOSIGNAL, NULL, NULL) = 571
+[pid 32392] sendmsg(4, {msg_name(0)=NULL, msg_iov(1)=[{"1", 1}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {9}}, msg_flags=MSG_TRUNC}, 0 <unfinished ...>
+[pid 32393] write(1, "GET / HTTP/1.1\r\nHost: 127.0.0.1:"..., 571 <unfinished ...>
+[pid 32392] <... sendmsg resumed> )     = 1
+[pid 32394] <... recvmsg resumed> {msg_name(0)=NULL, msg_iov(1)=[{"1", 16}], msg_controllen=24, {cmsg_len=20, cmsg_level=SOL_SOCKET, cmsg_type=SCM_RIGHTS, {4}}, msg_flags=0}, 0) = 1
+[pid 32392] epoll_wait(8,  <unfinished ...>
+[pid 32394] write(1, "received fd 4\n", 14) = 14
+[pid 32394] recvfrom(4, 0x7fff36ebcd80, 99999, 16384, 0, 0) = -1 EAGAIN (Resource temporarily unavailable)
+[pid 32394] recvmsg(5,  <unfinished ...>
+[pid 32393] <... write resumed> )       = 571
+[pid 32393] write(1, "reqline 1 /\n", 12) = 12
+[pid 32393] write(1, "reqline 2 HTTP/1.1\r\n", 20) = 20
+[pid 32393] write(3, "HTTP/1.0 400 Bad Request\n", 25) = 25
+[pid 32393] recvmsg(4, Process 32392 detached
+Process 32393 detached
+ <detached ...>
+Process 32394 detached
+Process 32395 detached
+Process 32396 detached
