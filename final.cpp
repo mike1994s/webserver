@@ -33,11 +33,13 @@ void respond(int fd)
     memset( (void*)mesg, (int)'\0', 99999 );
     const char *ROOT = "/home/misha/web_server/";
     int RecvResult = recv(fd,mesg, 99999, MSG_NOSIGNAL);
-		if (RecvResult == 0 && errno != EAGAIN){
-			shutdown(fd,SHUT_RDWR);
-			close(fd);
-		}else if (RecvResult >0){
-  
+	//EAGAIN -  "there is no data available right now, try again later
+    if (RecvResult == 0 && errno != EAGAIN){
+		shutdown(fd,SHUT_RDWR);
+		close(fd);		
+		std::cout << "error recv" << std::endl;
+			return;
+	}else if (RecvResult >0){
         	printf("%s", mesg);
         	reqline[0] = strtok (mesg, " \t\n"); // split on lexemes
        		 if ( strncmp(reqline[0], "GET\0", 4)==0 )  // if first 4 character equal
@@ -49,7 +51,7 @@ void respond(int fd)
 			    if ( strncmp( reqline[2], "HTTP/1.0", 8)!=0 
 				&& strncmp(reqline[2], "HTTP/1.1", 8 ) !=0 )
 			    {
-				write(fd, "HTTP/1.0 400 Bad Request\n", 25);
+				send(fd, "HTTP/1.0 400 Bad Request\n", 25 , MSG_NOSIGNAL);
 			    }
 			    else
 			    {
@@ -62,16 +64,21 @@ void respond(int fd)
 
                 	if ( (fileDesc=open(path, O_RDONLY))!=-1 )     
                 	{
-                    		send(fd, "HTTP/1.0 200 OK\n\n", 17, 0);
+                    		send(fd, "HTTP/1.0 200 OK\n\n", 17, MSG_NOSIGNAL);
                     		while ( (bytes_read=read(fileDesc, data_to_send, BYTES))>0 )
-                        		write (fd, data_to_send, bytes_read);
-                	}
-               			 else    write(fd, "HTTP/1.0 404 Not Found\n", 23);  
+                      			{
+						if (bytes_read != -1)
+							send (fd, data_to_send, bytes_read, MSG_NOSIGNAL);
+                			}
+			}
+               			 else    send(fd, "HTTP/1.0 404 Not Found\n", 23, MSG_NOSIGNAL);  
             		}
+      			shutdown(fd,SHUT_RDWR);
+     		 	close(fd);
         }
-    }
-      shutdown(fd,SHUT_RDWR);
-      close(fd);
+    }else {
+	std::cout << "Client disconnected unexpect" << std::endl;
+	}
 }
 
 void child(int sock)
@@ -117,7 +124,11 @@ public:
 			int N = epoll_wait(m_epoll, Events, MAX_EVENTS, -1);
 		
 			for (size_t i =0; i < N; ++i){
-				if (Events[i].events & EPOLLHUP){
+				  if ((Events[i].events & EPOLLERR) ||
+              (Events[i].events & EPOLLHUP) ||
+              (!(Events[i].events & EPOLLIN)))
+	    {
+				
 					 epoll_ctl(m_epoll, EPOLL_CTL_DEL, Events[i].data.fd, &(Events[i]));
 					 shutdown(Events[i].data.fd,SHUT_RDWR);
 					
@@ -147,7 +158,7 @@ private:
 	 
 		struct sockaddr_in SockAddr;
 		SockAddr.sin_family = AF_INET;
-		SockAddr.sin_port = htons( 11141);
+		SockAddr.sin_port = htons(15555);
 		SockAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
 		bind(m_masterSocket, (struct sockaddr *)(&SockAddr), sizeof(SockAddr));
