@@ -1,0 +1,147 @@
+execve("./server", ["./server"], [/* 79 vars */]) = 0
+brk(0)                                  = 0x2150000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6c4933b000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=133010, ...}) = 0
+mmap(NULL, 133010, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6c4931a000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/usr/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200@\6\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=1090072, ...}) = 0
+mmap(NULL, 3198144, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6c48e0e000
+mprotect(0x7f6c48f0f000, 2097152, PROT_NONE) = 0
+mmap(0x7f6c4910f000, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x101000) = 0x7f6c4910f000
+mmap(0x7f6c49118000, 11456, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6c49118000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360*\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=92504, ...}) = 0
+mmap(NULL, 2188352, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6c48bf7000
+mprotect(0x7f6c48c0d000, 2093056, PROT_NONE) = 0
+mmap(0x7f6c48e0c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7f6c48e0c000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\37\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1840928, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6c49319000
+mmap(NULL, 3949248, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6c48832000
+mprotect(0x7f6c489ed000, 2093056, PROT_NONE) = 0
+mmap(0x7f6c48bec000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ba000) = 0x7f6c48bec000
+mmap(0x7f6c48bf2000, 17088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6c48bf2000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20V\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=1071552, ...}) = 0
+mmap(NULL, 3166568, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6c4852c000
+mprotect(0x7f6c48631000, 2093056, PROT_NONE) = 0
+mmap(0x7f6c48830000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x104000) = 0x7f6c48830000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6c49318000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6c49316000
+arch_prctl(ARCH_SET_FS, 0x7f6c49316780) = 0
+mprotect(0x7f6c48bec000, 16384, PROT_READ) = 0
+mprotect(0x7f6c48830000, 4096, PROT_READ) = 0
+mprotect(0x7f6c48e0c000, 4096, PROT_READ) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6c49315000
+mprotect(0x7f6c4910f000, 28672, PROT_READ) = 0
+mprotect(0x605000, 4096, PROT_READ)     = 0
+mprotect(0x7f6c4933d000, 4096, PROT_READ) = 0
+munmap(0x7f6c4931a000, 133010)          = 0
+brk(0)                                  = 0x2150000
+brk(0x2182000)                          = 0x2182000
+open("/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 3
+read(3, "0-3\n", 8192)                  = 4
+close(3)                                = 0
+getpid()                                = 11360
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 25), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6c4933a000
+write(1, "pid my is = 11360\n", 18)     = 18
+socketpair(PF_LOCAL, SOCK_STREAM, 0, [3, 4]) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f6c49316a50) = 11361
+Process 11361 attached
+[pid 11360] close(4)                    = 0
+[pid 11361] close(3)                    = 0
+[pid 11361] rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+[pid 11361] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid 11360] write(1, "pid my is = 11360\n", 18 <unfinished ...>
+[pid 11361] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid 11361] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 11360] <... write resumed> )       = 18
+[pid 11360] socketpair(PF_LOCAL, SOCK_STREAM, 0, [4, 5]) = 0
+[pid 11360] clone(Process 11362 attached
+child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f6c49316a50) = 11362
+[pid 11360] close(5 <unfinished ...>
+[pid 11362] close(4 <unfinished ...>
+[pid 11360] <... close resumed> )       = 0
+[pid 11362] <... close resumed> )       = 0
+[pid 11360] write(1, "pid my is = 11360\n", 18 <unfinished ...>
+[pid 11362] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid 11360] <... write resumed> )       = 18
+[pid 11362] <... rt_sigprocmask resumed> [], 8) = 0
+[pid 11360] socketpair(PF_LOCAL, SOCK_STREAM, 0 <unfinished ...>
+[pid 11362] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid 11360] <... socketpair resumed> , [5, 6]) = 0
+[pid 11362] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid 11360] clone( <unfinished ...>
+[pid 11362] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 11361] <... rt_sigprocmask resumed> NULL, 8) = 0
+[pid 11361] nanosleep({1, 0},  <unfinished ...>
+[pid 11362] <... rt_sigprocmask resumed> NULL, 8) = 0
+[pid 11360] <... clone resumed> child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f6c49316a50) = 11363
+Process 11363 attached
+[pid 11362] nanosleep({1, 0},  <unfinished ...>
+[pid 11360] close(6)                    = 0
+[pid 11363] close(5)                    = 0
+[pid 11360] write(1, "pid my is = 11360\n", 18) = 18
+[pid 11363] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid 11360] socketpair(PF_LOCAL, SOCK_STREAM, 0, [6, 7]) = 0
+[pid 11363] <... rt_sigprocmask resumed> [], 8) = 0
+[pid 11360] clone( <unfinished ...>
+[pid 11363] rt_sigaction(SIGCHLD, NULL, Process 11364 attached
+{SIG_DFL, [], 0}, 8) = 0
+[pid 11360] <... clone resumed> child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f6c49316a50) = 11364
+[pid 11364] close(6 <unfinished ...>
+[pid 11360] close(7 <unfinished ...>
+[pid 11364] <... close resumed> )       = 0
+[pid 11360] <... close resumed> )       = 0
+[pid 11363] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 11360] socket(PF_INET, SOCK_STREAM, IPPROTO_TCP <unfinished ...>
+[pid 11364] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid 11363] <... rt_sigprocmask resumed> NULL, 8) = 0
+[pid 11360] <... socket resumed> )      = 7
+[pid 11364] <... rt_sigprocmask resumed> [], 8) = 0
+[pid 11360] bind(7, {sa_family=AF_INET, sin_port=htons(12347), sin_addr=inet_addr("0.0.0.0")}, 16 <unfinished ...>
+[pid 11364] rt_sigaction(SIGCHLD, NULL,  <unfinished ...>
+[pid 11363] nanosleep({1, 0},  <unfinished ...>
+[pid 11360] <... bind resumed> )        = 0
+[pid 11364] <... rt_sigaction resumed> {SIG_DFL, [], 0}, 8) = 0
+[pid 11360] fcntl(7, F_GETFL <unfinished ...>
+[pid 11364] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 11360] <... fcntl resumed> )       = 0x2 (flags O_RDWR)
+[pid 11364] <... rt_sigprocmask resumed> NULL, 8) = 0
+[pid 11360] fcntl(7, F_SETFL, O_RDWR|O_NONBLOCK <unfinished ...>
+[pid 11364] nanosleep({1, 0},  <unfinished ...>
+[pid 11360] <... fcntl resumed> )       = 0
+[pid 11360] listen(7, 128)              = 0
+[pid 11360] epoll_create1(0)            = 8
+[pid 11360] epoll_ctl(8, EPOLL_CTL_ADD, 7, {EPOLLIN|EPOLLRDHUP, {u32=7, u64=150338767486451719}}) = 0
+[pid 11360] epoll_wait(8,  <unfinished ...>
+[pid 11361] <... nanosleep resumed> 0x7ffe5cb62370) = 0
+[pid 11362] <... nanosleep resumed> 0x7ffe5cb62370) = 0
+[pid 11361] recvmsg(4,  <unfinished ...>
+[pid 11362] recvmsg(5,  <unfinished ...>
+[pid 11363] <... nanosleep resumed> 0x7ffe5cb62370) = 0
+[pid 11364] <... nanosleep resumed> 0x7ffe5cb62370) = 0
+[pid 11363] recvmsg(6,  <unfinished ...>
+[pid 11364] recvmsg(7, Process 11360 detached
+Process 11361 detached
+Process 11362 detached
+Process 11363 detached
+Process 11364 detached
+ <detached ...>
