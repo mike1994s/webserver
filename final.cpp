@@ -16,6 +16,7 @@
 #include <memory>
 #include <array>
 #include <sstream>
+#include <sys/stat.h>
 
 #include <cstring>
 #include <fcntl.h>
@@ -23,8 +24,44 @@
 #include "helper.h"
 #define BYTES 1024
 #define MAX_EVENTS 32
- 
 
+
+const int portNum = 15555; 
+static const char not_found[] = "HTTP/1.0 404 NOT FOUND\r\nContent-Type: text/html\r\n\r\n";
+static const char * CONTENT_TYPE = "Content-Type: text/html\r\n\r\n";
+static const char* templ =  "Content-length: %d\r\n"
+
+		       	   "Content-Type: text/html\r\n"
+
+		       	   "\r\n"
+
+		       	   "%s";
+const char *HEADER = "HTTP/1.0 200 OK\r\n"; 
+//char *HEADER_ANS = "HTTP/1.0 200 OK\n\nContent-length: \r\nContent-Type: text/html\r\n\r\n";
+#include <sstream>
+
+struct Request{
+	std::string method;
+	std::string uri;
+	std::string protocol;
+	void init(){
+	}
+	
+};
+void fillHeader(std::string & headerAns, int fd, const char * path ){
+			
+	int size;
+	struct stat st;
+	const char * p = path;
+	stat(p, &st);
+	size = st.st_size;
+//	std::cout << "Size = " << size << std::endl;
+	std::stringstream strm;
+	strm << "HTTP/1.0 200 OK\r\nContent-length: " ;
+	strm << size << "\r\nContent-Type: text/html\r\n\r\n";
+	headerAns = strm.str();
+	
+}
 void respond(int fd)
 {
     char mesg[99999], *reqline[3], data_to_send[BYTES], path[99999];
@@ -37,15 +74,16 @@ void respond(int fd)
     if (RecvResult == 0 && errno != EAGAIN){
 		shutdown(fd,SHUT_RDWR);
 		close(fd);		
-		std::cout << "error recv" << std::endl;
+	//	std::cout << "error recv" << std::endl;
 			return;
 	}else if (RecvResult >0){
-        	printf("%s", mesg);
+        //	printf("%s", mesg);
         	reqline[0] = strtok (mesg, " \t\n"); // split on lexemes
        		 if ( strncmp(reqline[0], "GET\0", 4)==0 )  // if first 4 character equal
         	{
             		reqline[1] = strtok (NULL, " \t");
             		reqline[2] = strtok (NULL, " \t\n");
+			std::cout << "reqline 0 " << reqline[0] << std::endl;
 			std::cout << "reqline 1 " << reqline[1] << std::endl;
 			std::cout << "reqline 2 " << reqline[2] << std::endl;
 			    if ( strncmp( reqline[2], "HTTP/1.0", 8)!=0 
@@ -60,24 +98,26 @@ void respond(int fd)
 			
                 	strcpy(path, ROOT);
                 	strcpy(&path[strlen(ROOT)], reqline[1]);
-                	printf("file: %s\n", path);
-
+                //	printf("file: %s\n", path);
+			//char answer[2048];
                 	if ( (fileDesc=open(path, O_RDONLY))!=-1 )     
                 	{
-                    		send(fd, "HTTP/1.0 200 OK\n\n", 17, MSG_NOSIGNAL);
+				
+				std::string header;
+				fillHeader(header, fileDesc, path);
+				send(fd,header.c_str(), (int)header.size(), MSG_NOSIGNAL);
                     		while ( (bytes_read=read(fileDesc, data_to_send, BYTES))>0 )
                       			{
 						if (bytes_read != -1)
 							send (fd, data_to_send, bytes_read, MSG_NOSIGNAL);
                 			}
 			}
-               			 else    send(fd, "HTTP/1.0 404 Not Found\n", 23, MSG_NOSIGNAL);  
+               		 else    send(fd, not_found, strlen(not_found), MSG_NOSIGNAL);  
             		}
       			shutdown(fd,SHUT_RDWR);
      		 	close(fd);
         }
-    }else {
-	std::cout << "Client disconnected unexpect" << std::endl;
+    }else{
 	}
 }
 
@@ -98,7 +138,6 @@ void child(int sock)
 		respond(fd);
    	  }
     }
-	printf("child processes is end\n");
 }
 
 struct Descriptors{
@@ -140,7 +179,7 @@ public:
 						handleConnection();
 				
 					}else {
-						char * arg = "1";
+						char  arg[1] = {'1'};
 						ssize_t size = sock_fd_write(m_fd[index], arg, 1,Events[i].data.fd);
 						index = (1+index) % m_fd.size();
 					}
@@ -158,7 +197,7 @@ private:
 	 
 		struct sockaddr_in SockAddr;
 		SockAddr.sin_family = AF_INET;
-		SockAddr.sin_port = htons(15555);
+		SockAddr.sin_port = htons(portNum);
 		SockAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
 		bind(m_masterSocket, (struct sockaddr *)(&SockAddr), sizeof(SockAddr));
@@ -199,7 +238,7 @@ int main(int argc, char **argv){
  
 	bool isParent = true;
 	for (int i  = 0; i < numCpu && isParent; ++i){
-		std::cout << "pid my is = " << getpid() <<std::endl;
+	//	std::cout << "pid my is = " << getpid() <<std::endl;
 		int sv[2];
 		  if (socketpair(AF_UNIX, SOCK_STREAM, 0, sv) < 0) {
      			   perror("socketpair");

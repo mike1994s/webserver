@@ -57,13 +57,13 @@ int fd // приклеиваем к информации (буфферу) оди
         cmsg->cmsg_level = SOL_SOCKET; //  обязательно !!! указыает что передаем сокет
         cmsg->cmsg_type = SCM_RIGHTS;  // ОБяхательно!! то же что и выше 
 
-        printf ("passing fd %d\n", fd);
+   //     printf ("passing fd %d\n", fd);
         *((int *) CMSG_DATA(cmsg)) = fd; // сам дескриптор
     } else {
       /// передаем по сокету без дескриптора
         msg.msg_control = NULL;
         msg.msg_controllen = 0;
-        printf ("not passing fd\n");
+ //       printf ("not passing fd\n");
     }
  
     /// ОТПРАВИЛИ!
@@ -137,8 +137,8 @@ sock_fd_read(int sock, void *buf, ssize_t bufsize, int *fd)
             printf ("received fd %d\n", *fd);
         } else{
 		*fd = -1; // значит ничего не пришло
-		std::cout << "Nothing to in\n";
-}
+	//	std::cout << "Nothing to in\n";
+	}
             
     } else {
 	// если файловый дескриптор нулл
