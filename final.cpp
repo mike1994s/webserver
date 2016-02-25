@@ -1,5 +1,6 @@
 #include <iostream>
 #include <set>
+#include <arpa/inet.h>
 #include <algorithm>
  
 #include <stdio.h>
@@ -22,11 +23,15 @@
 #include <fcntl.h>
 #include <sys/epoll.h>
 #include "helper.h"
+#include <iostream>
+#include <string>
 #define BYTES 1024
 #define MAX_EVENTS 32
 
-
-const int portNum = 15555; 
+char PORT[6];
+std::string ROOT;
+std::string IP;
+int portNum = 35555; 
 static const char not_found[] = "HTTP/1.0 404 NOT FOUND\r\nContent-Type: text/html\r\n\r\n";
 static const char * CONTENT_TYPE = "Content-Type: text/html\r\n\r\n";
 static const char* templ =  "Content-length: %d\r\n"
@@ -39,23 +44,51 @@ static const char* templ =  "Content-length: %d\r\n"
 const char *HEADER = "HTTP/1.0 200 OK\r\n"; 
 //char *HEADER_ANS = "HTTP/1.0 200 OK\n\nContent-length: \r\nContent-Type: text/html\r\n\r\n";
 #include <sstream>
-
-struct Request{
+std::string DEFAULT_DOCUMENT = "/index.html";
+class RequestServ{
 	std::string method;
 	std::string uri;
 	std::string protocol;
-	void init(){
+
+
+public:
+	std::string const &  getMethod()const {
+		return method;
+	}
+	bool isValidProtocol()const{
+		
+		return (protocol == "HTTP/1.0");
+	}
+	std::string const & getUri()const{
+		return uri;
+	}
+	void init(const char * message){
+		std::string buffer(message);
+		std::vector<std::string> tokens;
+		size_t pos = 0;
+		size_t newpos;
+		while(pos != std::string::npos) {
+    			newpos = buffer.find_first_of(" \t\n", pos);
+    			tokens.push_back(buffer.substr(pos, newpos-pos));
+    			if(pos != std::string::npos)
+        			pos++;
+		}
+				
+		if (tokens.size() > 2){
+			method = tokens[0];
+			uri = tokens[1];
+			protocol = tokens[2];
+		}
+//		std::cout << method  << "  " << uri << " " << protocol << std::endl;
 	}
 	
 };
 void fillHeader(std::string & headerAns, int fd, const char * path ){
-			
 	int size;
 	struct stat st;
 	const char * p = path;
 	stat(p, &st);
 	size = st.st_size;
-//	std::cout << "Size = " << size << std::endl;
 	std::stringstream strm;
 	strm << "HTTP/1.0 200 OK\r\nContent-length: " ;
 	strm << size << "\r\nContent-Type: text/html\r\n\r\n";
@@ -68,24 +101,23 @@ void respond(int fd)
     int rcvd, fileDesc, bytes_read;
 
     memset( (void*)mesg, (int)'\0', 99999 );
-    const char *ROOT = "/home/misha/web_server/";
-    int RecvResult = recv(fd,mesg, 99999, MSG_NOSIGNAL);
-	//EAGAIN -  "there is no data available right now, try again later
+   
+    int RecvResult = recv(fd,mesg, 99999, MSG_NOSIGNAL); 
     if (RecvResult == 0 && errno != EAGAIN){
 		shutdown(fd,SHUT_RDWR);
 		close(fd);		
 	//	std::cout << "error recv" << std::endl;
 			return;
-	}else if (RecvResult >0){
-        //	printf("%s", mesg);
+	}else if (RecvResult >0){ 
+	 
+ 
+		
         	reqline[0] = strtok (mesg, " \t\n"); // split on lexemes
        		 if ( strncmp(reqline[0], "GET\0", 4)==0 )  // if first 4 character equal
         	{
             		reqline[1] = strtok (NULL, " \t");
             		reqline[2] = strtok (NULL, " \t\n");
-			std::cout << "reqline 0 " << reqline[0] << std::endl;
-			std::cout << "reqline 1 " << reqline[1] << std::endl;
-			std::cout << "reqline 2 " << reqline[2] << std::endl;
+	 
 			    if ( strncmp( reqline[2], "HTTP/1.0", 8)!=0 
 				&& strncmp(reqline[2], "HTTP/1.1", 8 ) !=0 )
 			    {
@@ -94,12 +126,11 @@ void respond(int fd)
 			    else
 			    {
                 	if ( strncmp(reqline[1], "/\0", 2)==0 )
-                    	reqline[1] = "/index.html";      
+                    		reqline[1] = "/index.html";      
 			
-                	strcpy(path, ROOT);
-                	strcpy(&path[strlen(ROOT)], reqline[1]);
-                //	printf("file: %s\n", path);
-			//char answer[2048];
+                	strcpy(path, ROOT.c_str());
+                	strcpy(&path[strlen(ROOT.c_str())], reqline[1]);
+   
                 	if ( (fileDesc=open(path, O_RDONLY))!=-1 )     
                 	{
 				
@@ -197,9 +228,9 @@ private:
 	 
 		struct sockaddr_in SockAddr;
 		SockAddr.sin_family = AF_INET;
-		SockAddr.sin_port = htons(portNum);
-		SockAddr.sin_addr.s_addr = htonl(INADDR_ANY);
-
+		SockAddr.sin_port = htons(std::stoi(PORT));
+		inet_pton(AF_INET, IP.c_str(), &(SockAddr.sin_addr));
+		//SockAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 		bind(m_masterSocket, (struct sockaddr *)(&SockAddr), sizeof(SockAddr));
 	
 		set_nonblock(m_masterSocket);
@@ -232,7 +263,32 @@ void parent(int sock){
 
 int main(int argc, char **argv){
 	int numCpu = sysconf(_SC_NPROCESSORS_ONLN);
- 
+ 	char c;
+ 	 while ((c = getopt (argc, argv, "h:p:d:")) != -1)
+           switch (c)
+        	{
+            case 'd':
+                ROOT = optarg;
+               // strcpy(ROOT,optarg)	
+		std::cout << ROOT << std::endl;
+                break;
+            case 'p':
+                strcpy(PORT,optarg);
+		std::cout << portNum << std::endl;
+                break;
+          case 'h': 
+		IP = optarg;
+		std::cout << IP << std::endl; 
+		break;
+	   case '?':
+                fprintf(stderr,"Wrong arguments given!!!\n");
+                exit(1);
+            default:
+                exit(1);
+        }
+    
+    printf("Server started at port no. %s%s%s with root directory as %s%s%s\n","\033[92m",PORT,"\033[0m","\033[92m",ROOT.c_str(),"\033[0m");
+
 	std::vector<Descriptors> desc;
 	desc.resize(numCpu);
  
