@@ -108,10 +108,7 @@ void respond(int fd)
 		close(fd);		
 	//	std::cout << "error recv" << std::endl;
 			return;
-	}else if (RecvResult >0){ 
-	 
- 
-		
+	}else if (RecvResult >0){ 		
         	reqline[0] = strtok (mesg, " \t\n"); // split on lexemes
        		 if ( strncmp(reqline[0], "GET\0", 4)==0 )  // if first 4 character equal
         	{
@@ -125,9 +122,16 @@ void respond(int fd)
 			    }
 			    else
 			    {
+
+			if (strstr(reqline[1], "?") != NULL) {
+				reqline[1] = strtok(reqline[1], "?");
+			}
                 	if ( strncmp(reqline[1], "/\0", 2)==0 )
                     		reqline[1] = "/index.html";      
 			
+
+
+			//reqline[1] = uri.c_str();
                 	strcpy(path, ROOT.c_str());
                 	strcpy(&path[strlen(ROOT.c_str())], reqline[1]);
    
@@ -261,7 +265,7 @@ void parent(int sock){
 	Parent::getInstance().addFd(sock);
 }
 
-int main(int argc, char **argv){
+int mainDaemon(int argc, char **argv){
 	int numCpu = sysconf(_SC_NPROCESSORS_ONLN);
  	char c;
  	 while ((c = getopt (argc, argv, "h:p:d:")) != -1)
@@ -270,15 +274,15 @@ int main(int argc, char **argv){
             case 'd':
                 ROOT = optarg;
                // strcpy(ROOT,optarg)	
-		std::cout << ROOT << std::endl;
+//		std::cout << ROOT << std::endl;
                 break;
             case 'p':
                 strcpy(PORT,optarg);
-		std::cout << portNum << std::endl;
+//		std::cout << portNum << std::endl;
                 break;
           case 'h': 
 		IP = optarg;
-		std::cout << IP << std::endl; 
+//		std::cout << IP << std::endl; 
 		break;
 	   case '?':
                 fprintf(stderr,"Wrong arguments given!!!\n");
@@ -287,7 +291,7 @@ int main(int argc, char **argv){
                 exit(1);
         }
     
-    printf("Server started at port no. %s%s%s with root directory as %s%s%s\n","\033[92m",PORT,"\033[0m","\033[92m",ROOT.c_str(),"\033[0m");
+//    printf("Server started at port no. %s%s%s with root directory as %s%s%s\n","\033[92m",PORT,"\033[0m","\033[92m",ROOT.c_str(),"\033[0m");
 
 	std::vector<Descriptors> desc;
 	desc.resize(numCpu);
@@ -325,4 +329,48 @@ int main(int argc, char **argv){
 		waitpid(-1, &status, 0);
 
 	}
+
+}
+#include <cstdlib>
+int main(int argc, char **argv){
+	  /* Our process ID and Session ID */
+        pid_t pid, sid;
+        
+        /* Fork off the parent process */
+        pid = fork();
+        if (pid < 0) {
+                exit(EXIT_FAILURE);
+        }
+        /* If we got a good PID, then
+           we can exit the parent process. */
+        if (pid > 0) {
+                exit(EXIT_SUCCESS);
+        }
+
+        /* Change the file mode mask */
+        umask(0);
+                
+        /* Open any logs here */        
+                
+        /* Create a new SID for the child process */
+        sid = setsid();
+        if (sid < 0) {
+                /* Log the failure */
+                exit(EXIT_FAILURE);
+        }
+        
+
+        
+        /* Change the current working directory */
+        if ((chdir("/")) < 0) {
+                /* Log the failure */
+                exit(EXIT_FAILURE);
+        }
+        
+        /* Close out the standard file descriptors */
+        close(STDIN_FILENO);
+        close(STDOUT_FILENO);
+        close(STDERR_FILENO);
+	mainDaemon(argc, argv);
+	 exit(EXIT_SUCCESS);
 }	

@@ -134,7 +134,7 @@ sock_fd_read(int sock, void *buf, ssize_t bufsize, int *fd)
             }
 
             *fd = *((int *) CMSG_DATA(cmsg)); // читаем файловый дескриптор:
-            printf ("received fd %d\n", *fd);
+//            printf ("received fd %d\n", *fd);
         } else{
 		*fd = -1; // значит ничего не пришло
 	//	std::cout << "Nothing to in\n";
