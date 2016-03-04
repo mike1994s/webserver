@@ -141,7 +141,8 @@ void respond(int fd)
 				std::string header;
 				fillHeader(header, fileDesc, path);
 				send(fd,header.c_str(), (int)header.size(), MSG_NOSIGNAL);
-                    		while ( (bytes_read=read(fileDesc, data_to_send, BYTES))>0 )
+                    		set_nonblock(fileDesc);
+				while ( (bytes_read=read(fileDesc, data_to_send, BYTES))>0 )
                       			{
 						if (bytes_read != -1)
 							send (fd, data_to_send, bytes_read, MSG_NOSIGNAL);

@@ -99,6 +99,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named final
+
+# Build rule for target.
+final: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 final
+.PHONY : final
+
+# fast build rule for target.
+final/fast:
+	$(MAKE) -f CMakeFiles/final.dir/build.make CMakeFiles/final.dir/build
+.PHONY : final/fast
+
+#=============================================================================
 # Target rules for targets named foo
 
 # Build rule for target.
@@ -111,32 +124,19 @@ foo/fast:
 	$(MAKE) -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build
 .PHONY : foo/fast
 
-#=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
-
 # target to build an object file
 final.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/final.o
+	$(MAKE) -f CMakeFiles/final.dir/build.make CMakeFiles/final.dir/final.o
 .PHONY : final.o
 
 # target to preprocess a source file
 final.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/final.i
+	$(MAKE) -f CMakeFiles/final.dir/build.make CMakeFiles/final.dir/final.i
 .PHONY : final.i
 
 # target to generate assembly for a file
 final.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/final.s
+	$(MAKE) -f CMakeFiles/final.dir/build.make CMakeFiles/final.dir/final.s
 .PHONY : final.s
 
 # target to build an object file
@@ -161,8 +161,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... final"
 	@echo "... foo"
-	@echo "... main"
 	@echo "... rebuild_cache"
 	@echo "... final.o"
 	@echo "... final.i"
