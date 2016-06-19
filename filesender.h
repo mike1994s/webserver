@@ -1,0 +1,4 @@
+
+class filesender_t {
+
+}
